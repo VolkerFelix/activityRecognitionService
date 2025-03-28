@@ -1,10 +1,11 @@
 from datetime import datetime
+
 import numpy as np
 import pandas as pd
 
+from app.core.config import settings
 from app.models.acceleration import AccelerationData
 from app.models.activity import ActivityMetrics
-from app.core.config import settings
 
 
 def calculate_activity_metrics(data: AccelerationData) -> ActivityMetrics:

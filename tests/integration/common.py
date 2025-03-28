@@ -1,10 +1,11 @@
 import json
-from datetime import datetime, timedelta
-import pytest
-from fastapi.testclient import TestClient
-import uuid
 import math
 import random
+import uuid
+from datetime import datetime, timedelta
+
+import pytest
+from fastapi.testclient import TestClient
 
 from app.main import app
 from app.models.acceleration import AccelerationData, AccelerationSample

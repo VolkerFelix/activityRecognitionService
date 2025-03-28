@@ -1,18 +1,15 @@
 from datetime import datetime, timedelta
 from typing import List
+
 import numpy as np
 import pandas as pd
 from sklearn.cluster import DBSCAN
 
-from app.models.acceleration import AccelerationData
-from app.models.activity import (
-    ActivityType,
-    ActivitySegment,
-    ActivityPattern,
-    ActivityMetrics,
-)
-from app.utils.metrics import calculate_activity_metrics
 from app.core.config import settings
+from app.models.acceleration import AccelerationData
+from app.models.activity import (ActivityMetrics, ActivityPattern,
+                                 ActivitySegment, ActivityType)
+from app.utils.metrics import calculate_activity_metrics
 
 
 def extract_features(data: AccelerationData):

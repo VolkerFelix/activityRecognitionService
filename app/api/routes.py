@@ -1,5 +1,6 @@
-from fastapi import APIRouter, Depends, HTTPException
 from typing import List, Optional
+
+from fastapi import APIRouter, Depends, HTTPException
 
 from app.models.acceleration import AccelerationData
 from app.models.activity import ActivityRequest, ActivityResponse, ActivityType

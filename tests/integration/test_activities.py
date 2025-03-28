@@ -1,13 +1,12 @@
 import json
-from datetime import datetime, timedelta
 import uuid
+from datetime import datetime, timedelta
 
 from fastapi.testclient import TestClient
 
 from app.main import app
-from app.models.activity import ActivityRequest, ActivityType
 from app.models.acceleration import AccelerationData
-
+from app.models.activity import ActivityRequest, ActivityType
 from tests.integration.common import create_test_acceleration_data
 
 client = TestClient(app)
