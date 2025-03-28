@@ -76,11 +76,6 @@ def classify_activity(features):
     var_y = features["var_y"]
     var_z = features["var_z"]
 
-    # Print feature values for debugging
-    print(
-        f"Activity classification features: mean_mag={mean_mag}, var_x={var_x}, var_y={var_y}, var_z={var_z}"
-    )
-
     # Calculate total variance for simplified activity detection
     total_var = var_x + var_y + var_z
 
