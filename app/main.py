@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import router as api_router
 from app.core.config import settings
 
+
 def create_application() -> FastAPI:
     application = FastAPI(
         title="Areum Activity Recognition Service",
@@ -29,5 +30,6 @@ def create_application() -> FastAPI:
         return {"status": "healthy", "service": "activity-recognition"}
 
     return application
+
 
 app = create_application()

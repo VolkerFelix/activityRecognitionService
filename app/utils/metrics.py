@@ -6,6 +6,7 @@ from app.models.acceleration import AccelerationData
 from app.models.activity import ActivityMetrics
 from app.core.config import settings
 
+
 def calculate_activity_metrics(data: AccelerationData) -> ActivityMetrics:
     """Calculate activity metrics from accelerometer data."""
     samples = data.samples
