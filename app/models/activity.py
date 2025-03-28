@@ -2,9 +2,7 @@ from datetime import datetime
 from enum import Enum
 from typing import Dict, List, Optional, Any
 from pydantic import BaseModel, Field
-
 from app.models.acceleration import AccelerationData
-
 class ActivityType(str, Enum):
     WALKING = "walking"
     RUNNING = "running"

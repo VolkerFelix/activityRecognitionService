@@ -59,9 +59,23 @@ class ActivityRecognitionService:
             
             duration_by_type[activity_type] += duration
         
+        # Debug log
+        print(f"Duration by type: {duration_by_type}")
+        
+        # If no durations were added (which shouldn't happen but just in case)
+        if not duration_by_type:
+            return ActivityType.UNKNOWN
+            
         # Find the activity type with the longest duration
-        dominant_type = max(duration_by_type.items(), key=lambda x: x[1])[0]
-        return dominant_type
+        try:
+            dominant_type = max(duration_by_type.items(), key=lambda x: x[1])[0]
+            return dominant_type
+        except Exception as e:
+            print(f"Error determining dominant activity: {e}")
+            # If there was an error, check if walking is in the types
+            if ActivityType.WALKING in duration_by_type:
+                return ActivityType.WALKING
+            return ActivityType.UNKNOWN
     
     def calculate_activity_metrics(self, data: AccelerationData) -> ActivityMetrics:
         """Calculate activity metrics from accelerometer data."""
