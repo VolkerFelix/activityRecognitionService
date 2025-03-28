@@ -57,8 +57,10 @@ jobs:
       run: |
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # Check code formatting
-        black --check app tests
+        # Format files directly with Black
+        black app tests
+        # Check if there are any changes after formatting
+        git diff --exit-code || (echo "Black formatting applied, please pull latest changes and try again" && exit 1)
         isort --check-only --profile black app tests
 
   docker:
