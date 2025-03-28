@@ -1,12 +1,16 @@
 from typing import List
 
 from app.models.acceleration import AccelerationData
-from app.models.activity import (ActivityMetrics, ActivityPattern,
-                                 ActivityRequest, ActivityResponse,
-                                 ActivitySegment, ActivityType)
+from app.models.activity import (
+    ActivityMetrics,
+    ActivityPattern,
+    ActivityRequest,
+    ActivityResponse,
+    ActivitySegment,
+    ActivityType,
+)
 from app.utils.metrics import calculate_activity_metrics
-from app.utils.patterns import (detect_activity_patterns,
-                                detect_activity_segments)
+from app.utils.patterns import detect_activity_patterns, detect_activity_segments
 
 
 class ActivityRecognitionService:

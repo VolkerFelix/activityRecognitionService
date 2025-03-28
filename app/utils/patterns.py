@@ -7,8 +7,12 @@ from sklearn.cluster import DBSCAN
 
 from app.core.config import settings
 from app.models.acceleration import AccelerationData
-from app.models.activity import (ActivityMetrics, ActivityPattern,
-                                 ActivitySegment, ActivityType)
+from app.models.activity import (
+    ActivityMetrics,
+    ActivityPattern,
+    ActivitySegment,
+    ActivityType,
+)
 from app.utils.metrics import calculate_activity_metrics
 
 
